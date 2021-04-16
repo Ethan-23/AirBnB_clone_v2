@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #comment
 if ! which nginx > /dev/null 2>&1; then
-    apt-get update
-    apt-get install nginx
+    apt-get -y update
+    apt-get -y install nginx
 fi
 
 mkdir -p /data/web_static/releases/test/
