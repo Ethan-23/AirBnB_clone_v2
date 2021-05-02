@@ -66,3 +66,7 @@ class FileStorage:
             key = name + "." + uuid
             FileStorage.__objects.pop(key, None)
             FileStorage.save(self)
+
+    def close(self):
+        """deserializing the JSON file to objects"""
+        self.reload()
