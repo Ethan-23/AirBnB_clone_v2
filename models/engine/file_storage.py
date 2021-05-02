@@ -12,10 +12,9 @@ class FileStorage:
         """Returns a dictionary of models currently in storage"""
         addall = {}
         if cls is not None:
-            for i in FileStorage.__objects:
-                args = str(FileStorage.__objects[i]).split(" ")
-                if args[0] == "[" + cls.__name__ + "]":
-                    addall[i] = str(FileStorage.__objects[i])
+            for k, v in FileStorage.__objects:
+                if v.to_dict()['__class__'] == cls.__name__:
+                    addall[k] = v
             return addall
         else:
             return FileStorage.__objects
