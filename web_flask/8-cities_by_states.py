@@ -14,7 +14,7 @@ def hello_city():
     """gets states for html"""
     state = storage.all(State)
     city = storage.all(City)
-    return render_template('7-states_list.html', states=state, cities=city)
+    return render_template('8-cities_by_states.html', states=state, cities=city)
 
 
 @app.teardown_appcontext
