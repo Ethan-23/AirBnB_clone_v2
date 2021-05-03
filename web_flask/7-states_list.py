@@ -16,7 +16,7 @@ def hello_state():
 
 
 @app.teardown_appcontext
-def close_world():
+def close_world(self):
     """close"""
     storage.close()
 
