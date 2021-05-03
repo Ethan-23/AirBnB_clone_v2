@@ -25,7 +25,7 @@ def hello_state_id(id=None):
         if i.id == id:
             name = i.name
     return render_template('9-states.html', states=state, cities=city,
-                           ids=id, switch=1 name=name)
+                           ids=id, switch=1, name=name)
 
 
 @app.teardown_appcontext

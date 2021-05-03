@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
         <TITLE>HBNB</TITLE>
@@ -11,7 +11,8 @@
             <LI>{{ state.id }}: <B>{{ state.name }}</B>
 	{% endfor %}
 	{% else %}
-	      <LI>{{ ids }}: <B>{{ name }}</B>
+	      <H1>State: {{ name }}</H1>
+              <H3>Cities:</H3>
 	      {% if ids == state.id %}
                 <UL>
 		{% for city in cities.values()|sort(attribute="name") %}
