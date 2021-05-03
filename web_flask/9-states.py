@@ -19,8 +19,8 @@ def hello_state():
 @app.route('/states/<id>', strict_slashes=False)
 def hello_state_id(id=None):
     """gets states for html"""
-    state = storage.all(State).values
-    city = storage.all(City).values
+    state = storage.all(State).values()
+    city = storage.all(City).values()
     name = None
     for i in state:
         if i.id == id:
