@@ -22,11 +22,14 @@ def hello_state_id(id=None):
     state = storage.all(State).values()
     city = storage.all(City).values()
     name = None
+    exist = 0
     for i in state:
         if i.id == id:
             name = i.name
+            exist = 1
+            break
     return render_template('9-states.html', states=state, cities=city,
-                           ids=id, switch=1, name=name)
+                           ids=id, switch=1, name=name, exist=exist)
 
 
 @app.teardown_appcontext
