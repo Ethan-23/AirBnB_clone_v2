@@ -4,9 +4,9 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
+    {% if switch == 0 %}
         <H1>States</H1>
         <UL>
-    {% if switch == 0 %}
     {% for state in states.values()|sort(attribute="name") %}
             <LI>{{ state.id }}: <B>{{ state.name }}</B>
     {% endfor %}
