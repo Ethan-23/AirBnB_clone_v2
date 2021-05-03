@@ -6,22 +6,20 @@
     <BODY>
         <H1>States</H1>
         <UL>
-	{% if switch == 0 %}
-	{% for state in states.values()|sort(attribute="name") %}
+    {% if switch == 0 %}
+    {% for state in states.values()|sort(attribute="name") %}
             <LI>{{ state.id }}: <B>{{ state.name }}</B>
-	{% endfor %}
-	{% else %}
-	      <H1>State: {{ name }}</H1>
+    {% endfor %}
+    {% else %}
+          <H1>State: {{ name }}</H1>
               <H3>Cities:</H3>
-	      {% if ids == state.id %}
                 <UL>
-		{% for city in cities.values()|sort(attribute="name") %}
-		{% if city.state_id == state.id %}
+        {% for city in cities|sort(attribute="name") -%}
+        {% if city.state_id == ids %}
                         <LI> {{ city.id }}: <B>{{ city.name }}</B></LI>
-		{% endif %}
-		{% endfor %}
-	      {% endif %}
-	 {% endif %}
+        {% endif %}
+        {%- endfor %}
+     {% endif %}
                 </UL>
             </LI>
         </UL>

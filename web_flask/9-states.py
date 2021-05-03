@@ -3,6 +3,7 @@
 
 from models import storage
 from models.state import State
+from models.city import City
 from flask import render_template
 from flask import Flask
 app = Flask(__name__)
@@ -20,8 +21,8 @@ def hello_state_id(id=None):
     """gets states for html"""
     state = storage.all(State)
     city = storage.all(City)
-    name = none
-    for i in storage.all(State):
+    name = None
+    for i in state.values():
         if i.id == id:
             name = i.name
     return render_template('9-states.html', states=state, cities=city,
